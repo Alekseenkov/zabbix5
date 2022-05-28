@@ -18,10 +18,8 @@ sudo mysql -uroot -p "grant all privileges on zabbix.* to zabbix@localhost"
 sudo mysql -uroot -p "quit"
 sudo zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 sudo cat /home/user/zabbix_server.conf > /etc/zabbix/zabbix_server.conf
-sudo cat  /home/user/nginx.conf > /etc/zabbix/nginx.conf
+sudo cat /home/user/nginx.conf > /etc/zabbix/nginx.conf
 sudo cat /home/user/php-fpm.conf > /etc/zabbix/php-fpm.conf
 
-systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
-systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
-
-
+sudo systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
+sudo systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
